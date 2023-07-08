@@ -4,6 +4,13 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  roundsPlayed = 0;
+  game();
+}
+
 function getComputerSelection() {
   //Define list of options, then select random option from list, then return selection
   const selection = options[Math.floor(Math.random() * options.length)];
@@ -60,6 +67,8 @@ function game() {
     playRound(playerInput, getComputerSelection());
   }
   console.log(`${getWinCase()} ${playerScore} - ${computerScore}`);
+  alert("Press 'Ok' to play again.");
+  resetGame();
 }
 
 game();
